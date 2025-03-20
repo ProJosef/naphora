@@ -27,7 +27,7 @@ export default function Header() {
         <Search />
       </div>
 
-      <div className="bg-chart-3 flex items-center px-4 py-2 gap-4">
+      <div className="bg-chart-3 flex items-center px-4 py-1 gap-4">
         <Button className="header-button" variant="ghost">
           <MenuIcon />
           All
