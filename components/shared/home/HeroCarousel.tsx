@@ -1,3 +1,5 @@
+"use client"
+
 import {
   Carousel,
   CarouselContent,
@@ -9,10 +11,23 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import data from "@/lib/data";
 import Link from "next/link";
+import { useRef } from "react";
+import Autoplay from "embla-carousel-autoplay";
 
 export default function HeroCarousel() {
+  const autoPlay = useRef(
+    Autoplay({
+      delay: 7000,
+      stopOnInteraction: false,
+      stopOnMouseEnter: true,
+    })
+  );
   return (
-    <Carousel className="w-full">
+    <Carousel
+      className="w-full"
+      opts={{ loop: true }}
+      plugins={[autoPlay.current]}
+    >
       <CarouselContent>
         {data.carousels.map((carousel, index) => (
           <CarouselItem key={index} className="relative h-[80vh] w-full">
