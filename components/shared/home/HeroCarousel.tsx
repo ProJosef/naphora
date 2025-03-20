@@ -8,6 +8,7 @@ import {
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import data from "@/lib/data";
+import Link from "next/link";
 
 export default function HeroCarousel() {
   return (
@@ -17,7 +18,7 @@ export default function HeroCarousel() {
           <CarouselItem key={index} className="relative h-[80vh] w-full">
             <div className="absolute inset-0 z-0">
               <Image
-                src={carousel.image}  
+                src={carousel.image}
                 alt={carousel.title}
                 fill
                 className="object-cover w-full h-full"
@@ -29,9 +30,9 @@ export default function HeroCarousel() {
               <h2 className="text-xl md:text-6xl text-primary font-bold">
                 {carousel.title}
               </h2>
-              <Button className="text-base">
-                {carousel.buttonCaption}
-              </Button>
+              <Link href={carousel.url}>
+                <Button className="text-base">{carousel.buttonCaption}</Button>
+              </Link>
             </div>
           </CarouselItem>
         ))}
