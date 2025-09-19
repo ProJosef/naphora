@@ -1,3 +1,6 @@
+import Chatgpt from "@/components/shared/home/chatgpt";
+import FossilWatchCard from "@/components/shared/home/Claude";
+import { DeepSeek, ProductCard } from "@/components/shared/home/deepSeek";
 import HeroCarousel from "@/components/shared/home/HeroCarousel";
 import HomeCard from "@/components/shared/home/HomeCard";
 import {
@@ -54,6 +57,18 @@ export default async function Home() {
     <>
       <HeroCarousel />
       <HomeCard cards={cards} />
+      <Chatgpt />
+      <ProductCard
+  brand="Fossil"
+  title="Fossil Men's Machine Stainless Steel Quartz Watch"
+  currentPrice={158.21}
+  originalPrice={229.00}
+  discountPercentage={31}
+  isLimitedDeal={true}
+  rating={4.5}
+  reviewCount={128}
+  imageUrl="/path-to-watch-image.jpg"
+/>      <FossilWatchCard/>
     </>
   );
 }

@@ -22,3 +22,12 @@ export async function getItemsByTag(tag: string, limit?: number) {
     href: `/product/${item.slug}`,
   }));
 }
+
+export async function getNewProducts(limit?: number) {
+  await connectToDB();
+  const products = await Product.find({ isPublished: true })
+    .sort({ createdAt: -1 })
+    .limit(limit ?? 0)
+  
+  return products
+}
